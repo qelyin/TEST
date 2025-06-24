@@ -42,16 +42,7 @@ balance = round(user.get("balance", 0), 2)
 color = "green" if balance > 0 else "red" if balance < 0 else "white"
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.markdown(
-        f"""
-        <div style="background-color:#1c1c1c; padding: 2rem; border-radius: 12px; 
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); text-align: center;">
-            <h2 style="color: #ccc;">Current Balance</h2>
-            <h1 style="color: {color}; font-size: 3.5rem; margin: 0;">${balance}</h1>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.markdown(f'<div style="color: {color}; text-align: center; font-size: 4rem;"> ${balance}  </div>', unsafe_allow_html=True)
 
 # --- Mode Toggle ---
 view_expenses = st.toggle("Income/Expenses", value=True)
